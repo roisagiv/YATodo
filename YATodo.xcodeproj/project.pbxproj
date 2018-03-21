@@ -13,6 +13,8 @@
 		5F3645702062DEA400E69793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F36456F2062DEA400E69793 /* Assets.xcassets */; };
 		5F3645732062DEA400E69793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F3645712062DEA400E69793 /* LaunchScreen.storyboard */; };
 		5F36457E2062DEA500E69793 /* YATodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36457D2062DEA500E69793 /* YATodoTests.swift */; };
+		7BA6C6F9DB49178129149C6B /* Pods_YATodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */; };
+		D5317187FA8D07E22783DFF6 /* Pods_YATodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE876952764B790681424345 /* Pods_YATodo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		233ABBBE23A2C95B1D46FDF3 /* Pods-YATodoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B903AFFC5135A16D98A91FB /* Pods-YATodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YATodo/Pods-YATodo.debug.xcconfig"; sourceTree = "<group>"; };
 		5F3645652062DEA400E69793 /* YATodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3645682062DEA400E69793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F36456A2062DEA400E69793 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		5F3645792062DEA500E69793 /* YATodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YATodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F36457D2062DEA500E69793 /* YATodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YATodoTests.swift; sourceTree = "<group>"; };
 		5F36457F2062DEA500E69793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3A144285C97C550F5002981 /* Pods-YATodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2EFED816F08387CC6A534E3 /* Pods-YATodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YATodo/Pods-YATodo.release.xcconfig"; sourceTree = "<group>"; };
+		EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE876952764B790681424345 /* Pods_YATodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5317187FA8D07E22783DFF6 /* Pods_YATodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BA6C6F9DB49178129149C6B /* Pods_YATodoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,9 +69,11 @@
 		5F36455C2062DEA400E69793 = {
 			isa = PBXGroup;
 			children = (
+				F3FC747EDA156C28698D4232 /* Frameworks */,
+				A8B7662E082BA3D061A9A5B6 /* Pods */,
+				5F3645662062DEA400E69793 /* Products */,
 				5F3645672062DEA400E69793 /* YATodo */,
 				5F36457C2062DEA500E69793 /* YATodoTests */,
-				5F3645662062DEA400E69793 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				5F3645682062DEA400E69793 /* AppDelegate.swift */,
-				5F36456A2062DEA400E69793 /* ViewController.swift */,
-				5F36456C2062DEA400E69793 /* Main.storyboard */,
 				5F36456F2062DEA400E69793 /* Assets.xcassets */,
-				5F3645712062DEA400E69793 /* LaunchScreen.storyboard */,
 				5F3645742062DEA400E69793 /* Info.plist */,
+				5F3645712062DEA400E69793 /* LaunchScreen.storyboard */,
+				5F36456C2062DEA400E69793 /* Main.storyboard */,
+				5F36456A2062DEA400E69793 /* ViewController.swift */,
 			);
 			path = YATodo;
 			sourceTree = "<group>";
@@ -90,10 +102,30 @@
 		5F36457C2062DEA500E69793 /* YATodoTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F36457D2062DEA500E69793 /* YATodoTests.swift */,
 				5F36457F2062DEA500E69793 /* Info.plist */,
+				5F36457D2062DEA500E69793 /* YATodoTests.swift */,
 			);
 			path = YATodoTests;
+			sourceTree = "<group>";
+		};
+		A8B7662E082BA3D061A9A5B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B903AFFC5135A16D98A91FB /* Pods-YATodo.debug.xcconfig */,
+				D2EFED816F08387CC6A534E3 /* Pods-YATodo.release.xcconfig */,
+				233ABBBE23A2C95B1D46FDF3 /* Pods-YATodoTests.debug.xcconfig */,
+				C3A144285C97C550F5002981 /* Pods-YATodoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3FC747EDA156C28698D4232 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE876952764B790681424345 /* Pods_YATodo.framework */,
+				EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F3645822062DEA500E69793 /* Build configuration list for PBXNativeTarget "YATodo" */;
 			buildPhases = (
+				7675E0000B89F60749A84390 /* [CP] Check Pods Manifest.lock */,
 				5F3645612062DEA400E69793 /* Sources */,
 				5F3645622062DEA400E69793 /* Frameworks */,
 				5F3645632062DEA400E69793 /* Resources */,
+				CFE0D31619E7F9F1819F68BD /* [CP] Embed Pods Frameworks */,
+				DDB2FC98692A5F68730162EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F3645852062DEA500E69793 /* Build configuration list for PBXNativeTarget "YATodoTests" */;
 			buildPhases = (
+				88E1024FFAF5706459395FCA /* [CP] Check Pods Manifest.lock */,
 				5F3645752062DEA500E69793 /* Sources */,
 				5F3645762062DEA500E69793 /* Frameworks */,
 				5F3645772062DEA500E69793 /* Resources */,
+				2F745FB2BA56E728FA5C74E4 /* [CP] Embed Pods Frameworks */,
+				BCEE4DB3E2DEE904C00343F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +232,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F745FB2BA56E728FA5C74E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7675E0000B89F60749A84390 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YATodo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88E1024FFAF5706459395FCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YATodoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCEE4DB3E2DEE904C00343F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFE0D31619E7F9F1819F68BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDB2FC98692A5F68730162EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5F3645612062DEA400E69793 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -229,6 +383,7 @@
 				5F36456D2062DEA400E69793 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		5F3645712062DEA400E69793 /* LaunchScreen.storyboard */ = {
@@ -237,6 +392,7 @@
 				5F3645722062DEA400E69793 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -351,6 +507,7 @@
 		};
 		5F3645832062DEA500E69793 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B903AFFC5135A16D98A91FB /* Pods-YATodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -366,6 +523,7 @@
 		};
 		5F3645842062DEA500E69793 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2EFED816F08387CC6A534E3 /* Pods-YATodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +539,7 @@
 		};
 		5F3645862062DEA500E69793 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 233ABBBE23A2C95B1D46FDF3 /* Pods-YATodoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -398,6 +557,7 @@
 		};
 		5F3645872062DEA500E69793 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3A144285C97C550F5002981 /* Pods-YATodoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
