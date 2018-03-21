@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoListTitleView" customModule="YATodo" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Pb8-yQ-g14"/>
+                <outlet property="dateLabel" destination="roq-rx-Bg3" id="032-np-6hV"/>
+                <outlet property="monthLabel" destination="dut-bq-5Eh" id="hA3-4j-B0U"/>
+                <outlet property="todoCountLabel" destination="Ehl-dd-9EO" id="yCQ-Ca-7ud"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="146"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roq-rx-Bg3">
+                    <rect key="frame" x="32" y="16" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dut-bq-5Eh">
+                    <rect key="frame" x="32" y="45" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehl-dd-9EO">
+                    <rect key="frame" x="305" y="32" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Ehl-dd-9EO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="0aO-g4-oxp"/>
+                <constraint firstItem="roq-rx-Bg3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="HrU-bJ-v8e"/>
+                <constraint firstItem="dut-bq-5Eh" firstAttribute="leading" secondItem="roq-rx-Bg3" secondAttribute="leading" id="IU7-Gf-0ag"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ehl-dd-9EO" secondAttribute="trailing" constant="32" id="OWH-nk-fES"/>
+                <constraint firstItem="dut-bq-5Eh" firstAttribute="top" secondItem="roq-rx-Bg3" secondAttribute="bottom" constant="8" id="VLY-xN-Mbr"/>
+                <constraint firstItem="roq-rx-Bg3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="vKc-60-ig2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="36.5" y="-283"/>
+        </view>
+    </objects>
+</document>

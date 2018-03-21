@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5F3645692062DEA400E69793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3645682062DEA400E69793 /* AppDelegate.swift */; };
-		5F36456B2062DEA400E69793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36456A2062DEA400E69793 /* ViewController.swift */; };
-		5F36456E2062DEA400E69793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F36456C2062DEA400E69793 /* Main.storyboard */; };
 		5F3645702062DEA400E69793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F36456F2062DEA400E69793 /* Assets.xcassets */; };
 		5F3645732062DEA400E69793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F3645712062DEA400E69793 /* LaunchScreen.storyboard */; };
 		5F36457E2062DEA500E69793 /* YATodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F36457D2062DEA500E69793 /* YATodoTests.swift */; };
+		5F7D3B0B206379FC00771B33 /* TodoListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D3B0A206379FC00771B33 /* TodoListCellView.swift */; };
+		5F7D3B0D20637A2900771B33 /* TodoListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7D3B0C20637A2900771B33 /* TodoListCellView.xib */; };
+		5F7D3B0F20637DBB00771B33 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D3B0E20637DBB00771B33 /* Icons.swift */; };
+		5FAAF2672062FA3B007EE5D7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAF2662062FA3B007EE5D7 /* Theme.swift */; };
+		5FAAF26A2062FBE7007EE5D7 /* TodoListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAAF2692062FBE7007EE5D7 /* TodoListViewController.storyboard */; };
+		5FAAF26C2062FC2E007EE5D7 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAF26B2062FC2E007EE5D7 /* TodoListViewController.swift */; };
+		5FAAF26E20630E85007EE5D7 /* TodoListTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FAAF26D20630E85007EE5D7 /* TodoListTitleView.xib */; };
+		5FAAF27020630ED2007EE5D7 /* TodoListTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAF26F20630ED2007EE5D7 /* TodoListTitleView.swift */; };
 		7BA6C6F9DB49178129149C6B /* Pods_YATodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */; };
 		D5317187FA8D07E22783DFF6 /* Pods_YATodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE876952764B790681424345 /* Pods_YATodo.framework */; };
 /* End PBXBuildFile section */
@@ -32,14 +38,20 @@
 		4B903AFFC5135A16D98A91FB /* Pods-YATodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YATodo/Pods-YATodo.debug.xcconfig"; sourceTree = "<group>"; };
 		5F3645652062DEA400E69793 /* YATodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3645682062DEA400E69793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F36456A2062DEA400E69793 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5F36456D2062DEA400E69793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F36456F2062DEA400E69793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F3645722062DEA400E69793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F3645742062DEA400E69793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F3645792062DEA500E69793 /* YATodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YATodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F36457D2062DEA500E69793 /* YATodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YATodoTests.swift; sourceTree = "<group>"; };
 		5F36457F2062DEA500E69793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F7D3B0A206379FC00771B33 /* TodoListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCellView.swift; sourceTree = "<group>"; };
+		5F7D3B0C20637A2900771B33 /* TodoListCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListCellView.xib; sourceTree = "<group>"; };
+		5F7D3B0E20637DBB00771B33 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		5FAAF2662062FA3B007EE5D7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5FAAF2692062FBE7007EE5D7 /* TodoListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoListViewController.storyboard; sourceTree = "<group>"; };
+		5FAAF26B2062FC2E007EE5D7 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		5FAAF26D20630E85007EE5D7 /* TodoListTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTitleView.xib; sourceTree = "<group>"; };
+		5FAAF26F20630ED2007EE5D7 /* TodoListTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTitleView.swift; sourceTree = "<group>"; };
 		C3A144285C97C550F5002981 /* Pods-YATodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2EFED816F08387CC6A534E3 /* Pods-YATodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YATodo/Pods-YATodo.release.xcconfig"; sourceTree = "<group>"; };
 		EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,12 +101,12 @@
 		5F3645672062DEA400E69793 /* YATodo */ = {
 			isa = PBXGroup;
 			children = (
+				5FAAF2682062FBC0007EE5D7 /* TodoList */,
+				5FAAF2652062FA31007EE5D7 /* UI */,
 				5F3645682062DEA400E69793 /* AppDelegate.swift */,
 				5F36456F2062DEA400E69793 /* Assets.xcassets */,
 				5F3645742062DEA400E69793 /* Info.plist */,
 				5F3645712062DEA400E69793 /* LaunchScreen.storyboard */,
-				5F36456C2062DEA400E69793 /* Main.storyboard */,
-				5F36456A2062DEA400E69793 /* ViewController.swift */,
 			);
 			path = YATodo;
 			sourceTree = "<group>";
@@ -106,6 +118,28 @@
 				5F36457D2062DEA500E69793 /* YATodoTests.swift */,
 			);
 			path = YATodoTests;
+			sourceTree = "<group>";
+		};
+		5FAAF2652062FA31007EE5D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5F7D3B0E20637DBB00771B33 /* Icons.swift */,
+				5FAAF2662062FA3B007EE5D7 /* Theme.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5FAAF2682062FBC0007EE5D7 /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+				5F7D3B0A206379FC00771B33 /* TodoListCellView.swift */,
+				5F7D3B0C20637A2900771B33 /* TodoListCellView.xib */,
+				5FAAF26F20630ED2007EE5D7 /* TodoListTitleView.swift */,
+				5FAAF26D20630E85007EE5D7 /* TodoListTitleView.xib */,
+				5FAAF2692062FBE7007EE5D7 /* TodoListViewController.storyboard */,
+				5FAAF26B2062FC2E007EE5D7 /* TodoListViewController.swift */,
+			);
+			path = TodoList;
 			sourceTree = "<group>";
 		};
 		A8B7662E082BA3D061A9A5B6 /* Pods */ = {
@@ -218,8 +252,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F3645732062DEA400E69793 /* LaunchScreen.storyboard in Resources */,
+				5F7D3B0D20637A2900771B33 /* TodoListCellView.xib in Resources */,
 				5F3645702062DEA400E69793 /* Assets.xcassets in Resources */,
-				5F36456E2062DEA400E69793 /* Main.storyboard in Resources */,
+				5FAAF26A2062FBE7007EE5D7 /* TodoListViewController.storyboard in Resources */,
+				5FAAF26E20630E85007EE5D7 /* TodoListTitleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,22 +343,30 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialDesignSymbol/MaterialDesignSymbol.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialDesignSymbol.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -353,7 +397,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F36456B2062DEA400E69793 /* ViewController.swift in Sources */,
+				5FAAF26C2062FC2E007EE5D7 /* TodoListViewController.swift in Sources */,
+				5FAAF2672062FA3B007EE5D7 /* Theme.swift in Sources */,
+				5F7D3B0F20637DBB00771B33 /* Icons.swift in Sources */,
+				5F7D3B0B206379FC00771B33 /* TodoListCellView.swift in Sources */,
+				5FAAF27020630ED2007EE5D7 /* TodoListTitleView.swift in Sources */,
 				5F3645692062DEA400E69793 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,15 +425,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5F36456C2062DEA400E69793 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F36456D2062DEA400E69793 /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		5F3645712062DEA400E69793 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -516,7 +555,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.roisagiv.YATodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -532,7 +570,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.roisagiv.YATodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

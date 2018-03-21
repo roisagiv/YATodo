@@ -14,6 +14,10 @@ target 'YATodo' do
   pod 'Moya', $Moya
   pod 'Moya/RxSwift', $Moya
   
+  # Custom Views
+  pod 'Reusable', '4.0.2'
+  
+  # UI
   $MaterialComponents = '48.0.0'
   pod 'MaterialComponents/AppBar', $MaterialComponents
   pod 'MaterialComponents/AppBar+Extensions/ColorThemer', $MaterialComponents
@@ -24,9 +28,26 @@ target 'YATodo' do
   pod 'MaterialComponents/TextFields', $MaterialComponents
   pod 'MaterialComponents/TextFields+Extensions/ColorThemer', $MaterialComponents
   
+  # Colors
+  pod 'Hue', '3.0.1'
+  
+  # Icons
+  pod 'MaterialDesignSymbol', '2.2.2'
+  
+  # Fakes
+  pod 'Fakery', '3.3.0'
+  
   target 'YATodoTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '4.0'
+    end
+  end
 end

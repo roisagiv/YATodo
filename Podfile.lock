@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.7.0)
+  - Fakery (3.3.0)
+  - Hue (3.0.1)
   - MaterialComponents/AnimationTiming (48.0.0)
   - MaterialComponents/AppBar (48.0.0):
     - MaterialComponents/FlexibleHeader
@@ -99,6 +101,7 @@ PODS:
   - MaterialComponents/Themes (48.0.0)
   - MaterialComponents/Typography (48.0.0):
     - MaterialComponents/private/Application
+  - MaterialDesignSymbol (2.2.2)
   - MDFInternationalization (1.0.4)
   - MDFTextAccessibility (1.2.0)
   - Moya (11.0.1):
@@ -110,11 +113,18 @@ PODS:
     - Moya/Core
     - RxSwift (~> 4.0)
   - Result (3.2.4)
+  - Reusable (4.0.2):
+    - Reusable/Storyboard (= 4.0.2)
+    - Reusable/View (= 4.0.2)
+  - Reusable/Storyboard (4.0.2)
+  - Reusable/View (4.0.2)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - Fakery (= 3.3.0)
+  - Hue (= 3.0.1)
   - MaterialComponents/AppBar (= 48.0.0)
   - MaterialComponents/AppBar+Extensions/ColorThemer (= 48.0.0)
   - MaterialComponents/Buttons (= 48.0.0)
@@ -123,21 +133,27 @@ DEPENDENCIES:
   - MaterialComponents/TextFields (= 48.0.0)
   - MaterialComponents/TextFields+Extensions/ColorThemer (= 48.0.0)
   - MaterialComponents/Themes (= 48.0.0)
+  - MaterialDesignSymbol (= 2.2.2)
   - Moya (= 11.0.1)
   - Moya/RxSwift (= 11.0.1)
+  - Reusable (= 4.0.2)
   - RxCocoa (= 4.1.2)
   - RxSwift (= 4.1.2)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Fakery: 3aae11a87721c807c18c6456500d088c1230d3e5
+  Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
   MaterialComponents: 540ef387fee311a1b4b3ccec93d4db6db35d24bf
+  MaterialDesignSymbol: 3cfa8b62d37e498f99ce45208453cfd962f3a156
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: cf1384a1164dda719fe78cfecc0f8aef0f7b0523
+PODFILE CHECKSUM: fabaa9fa6981ad463357f73d894ff6bea78c05f2
 
 COCOAPODS: 1.4.0
