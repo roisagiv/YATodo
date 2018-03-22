@@ -6,13 +6,20 @@
 //  Copyright © 2018 Roi Sagiv. All rights reserved.
 //
 
+import Fakery
 import MaterialComponents
 import MaterialDesignSymbol
-import Fakery
+import RxCocoa
+import RxSwift
 
 class TodoListViewController: MDCCollectionViewController {
   fileprivate let appBar = MDCAppBar()
   private var titleView: TodoListTitleView?
+  fileprivate var spinnerView: UIView?
+
+  private var todos: [TodoModel] = []
+  private let disposeBag = DisposeBag()
+  fileprivate var viewModel: TodoListViewModel?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,16 +32,32 @@ class TodoListViewController: MDCCollectionViewController {
     appBar.headerViewController.headerView.trackingScrollView = collectionView
     appBar.addSubviewsToParent()
 
+    let insets = UIApplication.shared.delegate?.window??.safeAreaInsets
+    let height = 104 + (insets?.top ?? 0.0)
     let headerView = appBar.headerViewController.headerView
     headerView.canOverExtend = false
-    headerView.maximumHeight = 104
-    headerView.minimumHeight = 104
-//    Theme.applyGradient(view: headerView)
+    headerView.maximumHeight = height
+    headerView.minimumHeight = height
 
     titleView = TodoListTitleView(frame: headerView.bounds)
     titleView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     headerView.insertSubview(titleView!, at: 0)
-//    appBar.navigationBar.backgroundColor = UIColor.clear
+
+    viewModel?.loading.drive(onNext: { [weak self] loading in
+      guard let `self` = self else { return }
+      if loading {
+        self.spinnerView = self.displaySpinner()
+      } else {
+        guard let spinnerView = self.spinnerView else { return }
+        self.removeSpinner(spinnerView)
+      }
+    }).disposed(by: disposeBag)
+
+    viewModel?.todos.drive(onNext: { [weak self] todos in
+      self?.todos = todos
+      self?.collectionView?.reloadData()
+    }).disposed(by: disposeBag)
+
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -56,21 +79,14 @@ extension TodoListViewController {
 
   override func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
-    return 20
+    return todos.count
   }
 
   override func collectionView(_ collectionView: UICollectionView,
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: TodoListCellView = collectionView.dequeueReusableCell(for: indexPath)
-    if indexPath.row % 2 == 0 {
-      cell.imageView?.image = Icons.checkBoxOutline(size: CGSize(width: 24, height: 24))
-    } else {
-      cell.imageView?.image = Icons.checkBox(size: CGSize(width: 24, height: 24))
-    }
-    
-    let faker = Faker()
-    cell.textLabel?.text = faker.lorem.sentence()
-    cell.textLabel?.textColor = Theme.tintSecondaryTextColor
+    let todo = todos[indexPath.row]
+    cell.configure(todo: todo)
 
     return cell
   }
@@ -112,10 +128,36 @@ extension TodoListViewController {
 }
 
 extension TodoListViewController {
-  class func new() -> UIViewController {
+  class func new(viewModel: TodoListViewModel) -> UIViewController {
     let className = String(describing: TodoListViewController.self)
     let storyboard = UIStoryboard(name: className, bundle: nil)
     let vc = storyboard.instantiateViewController(withIdentifier: className)
+    let todoListVc = vc as? TodoListViewController
+    todoListVc?.viewModel = viewModel
     return vc
+  }
+}
+
+extension TodoListViewController {
+  func displaySpinner() -> UIView {
+    let spinnerView = UIView(frame: view.bounds)
+    spinnerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    spinnerView.backgroundColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 0.3)
+    let ai = MDCActivityIndicator(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+    ai.startAnimating()
+    ai.center = spinnerView.center
+    Theme.apply(activityIndicator: ai)
+
+    DispatchQueue.main.async {
+      spinnerView.addSubview(ai)
+      self.view.addSubview(spinnerView)
+    }
+    return spinnerView
+  }
+
+  func removeSpinner(_ spinner: UIView) {
+    DispatchQueue.main.async {
+      spinner.removeFromSuperview()
+    }
   }
 }

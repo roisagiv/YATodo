@@ -1,7 +1,23 @@
 PODS:
   - Alamofire (4.7.0)
   - Fakery (3.3.0)
+  - GRDB.swift (2.9.0)
   - Hue (3.0.1)
+  - iOSSnapshotTestCase (2.2.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 2.2.0)
+  - iOSSnapshotTestCase/Core (2.2.0)
+  - iOSSnapshotTestCase/SwiftSupport (2.2.0):
+    - iOSSnapshotTestCase/Core
+  - MaterialComponents/ActivityIndicator (48.0.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Application
+    - MDFInternationalization
+    - MotionAnimator (~> 2.0)
+  - MaterialComponents/ActivityIndicator+Extensions (48.0.0):
+    - MaterialComponents/ActivityIndicator+Extensions/ColorThemer (= 48.0.0)
+  - MaterialComponents/ActivityIndicator+Extensions/ColorThemer (48.0.0):
+    - MaterialComponents/ActivityIndicator
+    - MaterialComponents/Themes
   - MaterialComponents/AnimationTiming (48.0.0)
   - MaterialComponents/AppBar (48.0.0):
     - MaterialComponents/FlexibleHeader
@@ -104,6 +120,9 @@ PODS:
   - MaterialDesignSymbol (2.2.2)
   - MDFInternationalization (1.0.4)
   - MDFTextAccessibility (1.2.0)
+  - MotionAnimator (2.8.1):
+    - MotionInterchange (~> 1.6)
+  - MotionInterchange (1.6.0)
   - Moya (11.0.1):
     - Moya/Core (= 11.0.1)
   - Moya/Core (11.0.1):
@@ -112,19 +131,51 @@ PODS:
   - Moya/RxSwift (11.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
+  - Nimble (7.0.3)
+  - Nimble-Snapshots (6.4.1):
+    - Nimble-Snapshots/Core (= 6.4.1)
+  - Nimble-Snapshots/Core (6.4.1):
+    - iOSSnapshotTestCase (~> 2.0)
+    - Nimble (~> 7.0)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.1.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
+  - Quick (1.2.0)
   - Result (3.2.4)
   - Reusable (4.0.2):
     - Reusable/Storyboard (= 4.0.2)
     - Reusable/View (= 4.0.2)
   - Reusable/Storyboard (4.0.2)
   - Reusable/View (4.0.2)
+  - RxBlocking (4.1.2):
+    - RxSwift (~> 4.0)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
+  - RxGRDB (0.9.0):
+    - RxGRDB/default (= 0.9.0)
+    - RxSwift (~> 4.0)
+  - RxGRDB/default (0.9.0):
+    - GRDB.swift (~> 2.6)
+    - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - SwiftLint (0.25.0)
+  - Swinject (2.2.0)
 
 DEPENDENCIES:
   - Fakery (= 3.3.0)
   - Hue (= 3.0.1)
+  - MaterialComponents/ActivityIndicator (= 48.0.0)
+  - MaterialComponents/ActivityIndicator+Extensions (= 48.0.0)
   - MaterialComponents/AppBar (= 48.0.0)
   - MaterialComponents/AppBar+Extensions/ColorThemer (= 48.0.0)
   - MaterialComponents/Buttons (= 48.0.0)
@@ -136,24 +187,44 @@ DEPENDENCIES:
   - MaterialDesignSymbol (= 2.2.2)
   - Moya (= 11.0.1)
   - Moya/RxSwift (= 11.0.1)
+  - Nimble (= 7.0.3)
+  - Nimble-Snapshots (= 6.4.1)
+  - OHHTTPStubs/Swift (= 6.1.0)
+  - Quick (= 1.2.0)
   - Reusable (= 4.0.2)
+  - RxBlocking (= 4.1.2)
   - RxCocoa (= 4.1.2)
+  - RxGRDB (= 0.9.0)
   - RxSwift (= 4.1.2)
+  - SwiftLint (= 0.25.0)
+  - Swinject (= 2.2.0)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   Fakery: 3aae11a87721c807c18c6456500d088c1230d3e5
+  GRDB.swift: db8429f12d250f3056df82eb3409e5af083948ca
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  iOSSnapshotTestCase: 415bd84f9dbba4ff45fede49d800bc7332fbedac
   MaterialComponents: 540ef387fee311a1b4b3ccec93d4db6db35d24bf
   MaterialDesignSymbol: 3cfa8b62d37e498f99ce45208453cfd962f3a156
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
+  MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
+  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   Moya: 3d594ada51a21cc02b18739ab578a1984f900c8a
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble-Snapshots: 438fb1a6fa3c655e246fc9ac375f6cd2964d759a
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   Reusable: 584a5629747c52e0f6a77841b400dc2643f6fa0f
+  RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxGRDB: fdac7349a935ad1b85d3a42c25c5b288ac695f44
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  Swinject: 4ca48bca7de5f398229a26abe1ac902b9f3ee541
 
-PODFILE CHECKSUM: fabaa9fa6981ad463357f73d894ff6bea78c05f2
+PODFILE CHECKSUM: 32881e4b92a809936904d9f22b943e69b07ee1d4
 
 COCOAPODS: 1.4.0

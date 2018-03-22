@@ -18,7 +18,7 @@ struct Icons {
                         value: Theme.tintSecondaryTextColor)
     return symbol.image(size: size)
   }
-  
+
   static func checkBox(size: CGSize) -> UIImage {
     let symbol: MaterialDesignSymbol = MaterialDesignSymbol(
       text: MaterialDesignIcon.checkBox24px,

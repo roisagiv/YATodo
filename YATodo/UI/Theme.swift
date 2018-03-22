@@ -18,7 +18,7 @@ struct Theme {
   static let secondaryLightColor = UIColor(hex: "#ffa3a2")
   static let secondaryDarkColor = UIColor(hex: "#be4048")
   static let secondaryTextColor = UIColor.black
-  
+
   static let tintTextColor = UIColor(hex: "#5a5ee7")
   static let tintSecondaryTextColor = UIColor(hex: "#8f8da5")
 
@@ -44,6 +44,10 @@ struct Theme {
     navigationBar.layer.insertSublayer(gradientLayer, at: 0)
     navigationBar.tintColor = tintColor
     navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: tintColor]
+  }
+
+  static func apply(activityIndicator: MDCActivityIndicator) {
+    MDCActivityIndicatorColorThemer.apply(Theme.colorScheme, to: activityIndicator)
   }
 
   static func applyGradient(view: UIView) {
