@@ -11,6 +11,13 @@ import RxSwift
 
 protocol TodoNetworkService {
   func all() -> Single<[TodoModel]>
+
+  // swiftlint:disable:next identifier_name
+  func get(id: Int) -> Single<TodoModel>
+
+  func update(todo: TodoModel) -> Single<TodoModel>
+
+  func create(title: String, completed: Bool) -> Single<TodoModel>
 }
 
 struct MoyaTodoNetworkService: TodoNetworkService {
@@ -30,5 +37,27 @@ struct MoyaTodoNetworkService: TodoNetworkService {
       .request(.all)
       .filterSuccessfulStatusAndRedirectCodes()
       .map([TodoModel].self)
+  }
+
+  // swiftlint:disable:next identifier_name
+  func get(id: Int) -> Single<TodoModel> {
+    return provider.rx
+      .request(.get(id: id))
+      .filterSuccessfulStatusAndRedirectCodes()
+      .map(TodoModel.self)
+  }
+
+  func update(todo: TodoModel) -> Single<TodoModel> {
+    return provider.rx
+      .request(.update(id: todo.id, title: todo.title, completed: todo.completed))
+      .filterSuccessfulStatusAndRedirectCodes()
+      .map(TodoModel.self)
+  }
+
+  func create(title: String, completed: Bool) -> Single<TodoModel> {
+    return provider.rx
+      .request(.create(title: title, completed: completed))
+      .filterSuccessfulStatusAndRedirectCodes()
+      .map(TodoModel.self)
   }
 }

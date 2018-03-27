@@ -16,4 +16,8 @@ class JSONs {
     let decoder = JSONDecoder()
     return try! decoder.decode(T.self, from: data)
   }
+
+  class func toData<T>(_ object: T) -> Data where T: Codable {
+    return try! JSONEncoder().encode(object)
+  }
 }

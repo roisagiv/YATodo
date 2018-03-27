@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo Item View Controller-->
+        <scene sceneID="g5D-gR-lfd">
+            <objects>
+                <viewController storyboardIdentifier="TodoItemViewController" id="Yhy-xh-a9b" customClass="TodoItemViewController" customModule="YATodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V62-nM-GLG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfE-rh-fQ4" customClass="MDCMultilineTextField">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zqU-Rm-Hzb" customClass="MDCIntrinsicHeightTextView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="textView" destination="zqU-Rm-Hzb" id="KK9-Tf-Z2h"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zb7-el-lAl" firstAttribute="trailing" secondItem="nfE-rh-fQ4" secondAttribute="trailing" id="K4I-kG-Eg4"/>
+                            <constraint firstItem="nfE-rh-fQ4" firstAttribute="top" secondItem="zb7-el-lAl" secondAttribute="top" constant="56" id="TRn-ei-tRv"/>
+                            <constraint firstItem="zb7-el-lAl" firstAttribute="bottom" secondItem="nfE-rh-fQ4" secondAttribute="bottom" id="XEl-Lq-Kbk"/>
+                            <constraint firstItem="nfE-rh-fQ4" firstAttribute="leading" secondItem="zb7-el-lAl" secondAttribute="leading" id="YCX-YV-3ye"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zb7-el-lAl"/>
+                    </view>
+                    <connections>
+                        <outlet property="todoNameTextField" destination="nfE-rh-fQ4" id="vtm-Px-I5y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LxC-pO-SEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="-243"/>
+        </scene>
+    </scenes>
+</document>

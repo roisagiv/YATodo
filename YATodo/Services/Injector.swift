@@ -16,16 +16,26 @@ class Injector {
     return container.resolve(TodoListViewModel.self)!
   }
 
+  // swiftlint:disable:next identifier_name
+  class func todoItemViewModel(id: Int?) -> TodoItemViewModel {
+    return container.resolve(TodoItemViewModel.self, argument: id)!
+  }
+
+  class func router() -> Router {
+    return container.resolve(Router.self)!
+  }
+
   private static var container: Container!
 
   class func configure(application: UIApplication) {
+    let log = false
     container = Container { container in
       container.register(TodoNetworkService.self) { _ in
-        MoyaTodoNetworkService(log: false)
+        MoyaTodoNetworkService(log: log)
       }
 
       container.register(DatabaseWriter.self) { _ in
-        let writer = DBFactory.inMemory(log: false)
+        let writer = DBFactory.inMemory(log: log)
         do {
           try DBMigrationService.migrate(database: writer)
         } catch {}
@@ -34,7 +44,7 @@ class Injector {
 
       container.register(TodoStorageService.self) { resolver in
         GRDBTodoStorageService(database: resolver.resolve(DatabaseWriter.self)!)
-      }
+      }.inObjectScope(.container)
 
       container.register(TodoRepository.self) { resolver in
         TodoRepository(
@@ -45,6 +55,15 @@ class Injector {
 
       container.register(TodoListViewModel.self) { resolver in
         DefaultTodoListViewModel(repository: resolver.resolve(TodoRepository.self)!)
+      }
+
+      // swiftlint:disable:next identifier_name
+      container.register(TodoItemViewModel.self) { resolver, id in
+        DefaultTodoItemViewModel(repository: resolver.resolve(TodoRepository.self)!, id: id)
+      }
+
+      container.register(Router.self) { _ in
+        DefaultRouter()
       }
     }
   }

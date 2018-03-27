@@ -10,9 +10,12 @@
 		5F10A4392067E9F800DB051E /* TodoListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F10A4382067E9F800DB051E /* TodoListViewControllerSpec.swift */; };
 		5F10A43B2068318C00DB051E /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F10A43A2068318C00DB051E /* Device.swift */; };
 		5F10A43D2068F56600DB051E /* JSONs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F10A43C2068F56600DB051E /* JSONs.swift */; };
+		5F180E522070A8380090B21D /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F180E512070A8380090B21D /* RouterSpec.swift */; };
 		5F3645692062DEA400E69793 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3645682062DEA400E69793 /* AppDelegate.swift */; };
 		5F3645702062DEA400E69793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F36456F2062DEA400E69793 /* Assets.xcassets */; };
 		5F3645732062DEA400E69793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F3645712062DEA400E69793 /* LaunchScreen.storyboard */; };
+		5F3A09A22076325000C50906 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A09A12076325000C50906 /* ActivityIndicatorViewController.swift */; };
+		5F3A09A52076CE2200C50906 /* TodoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3A09A42076CE2200C50906 /* TodoItemViewControllerSpec.swift */; };
 		5F4D1B0620690FDA00375DE3 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4D1B0520690FDA00375DE3 /* Sync.swift */; };
 		5F7D3B0B206379FC00771B33 /* TodoListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7D3B0A206379FC00771B33 /* TodoListCellView.swift */; };
 		5F7D3B0D20637A2900771B33 /* TodoListCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F7D3B0C20637A2900771B33 /* TodoListCellView.xib */; };
@@ -22,6 +25,7 @@
 		5FAAF26C2062FC2E007EE5D7 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAF26B2062FC2E007EE5D7 /* TodoListViewController.swift */; };
 		5FAAF26E20630E85007EE5D7 /* TodoListTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FAAF26D20630E85007EE5D7 /* TodoListTitleView.xib */; };
 		5FAAF27020630ED2007EE5D7 /* TodoListTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAF26F20630ED2007EE5D7 /* TodoListTitleView.swift */; };
+		5FAB56542070128F005A3D23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB56532070128F005A3D23 /* Router.swift */; };
 		5FB6E8022064566B00406388 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6E8012064566B00406388 /* TodoRepository.swift */; };
 		5FB6E8052064E8A200406388 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6E8042064E8A200406388 /* Injector.swift */; };
 		5FB6E8082064EAE400406388 /* TodoRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB6E8072064EAE400406388 /* TodoRepositorySpec.swift */; };
@@ -35,8 +39,13 @@
 		5FBFC4DE206409D400FDC35D /* TodoNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFC4DD206409D400FDC35D /* TodoNetworkService.swift */; };
 		5FBFC4E1206409E900FDC35D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFC4E0206409E900FDC35D /* Todo.swift */; };
 		5FBFC4E320642B5E00FDC35D /* TodoStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBFC4E220642B5E00FDC35D /* TodoStorageService.swift */; };
-		7BA6C6F9DB49178129149C6B /* Pods_YATodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */; };
-		D5317187FA8D07E22783DFF6 /* Pods_YATodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE876952764B790681424345 /* Pods_YATodo.framework */; };
+		5FCCB4B920698C3C00719062 /* TodoItemViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCB4B820698C3C00719062 /* TodoItemViewController.storyboard */; };
+		5FCCB4BB206994E100719062 /* TodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCB4BA206994E100719062 /* TodoItemViewController.swift */; };
+		5FCCB4BD206A082000719062 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCB4BC206A082000719062 /* Storyboards.swift */; };
+		5FCCB4BF206A099A00719062 /* TodoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCB4BE206A099A00719062 /* TodoItemViewModel.swift */; };
+		5FF0F9BE2071FF5F00E2B8F3 /* jsonplaceholder-get-success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FF0F9BD2071FF5F00E2B8F3 /* jsonplaceholder-get-success.json */; };
+		88A62A7B9D80260A796C83BD /* Pods_YATodoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EDCE5045FFBEF4A8A7D167 /* Pods_YATodoTests.framework */; };
+		EA2AB34300F5352F64FCF133 /* Pods_YATodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B713F594447AC49B02387D /* Pods_YATodo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +64,7 @@
 		5F10A4382067E9F800DB051E /* TodoListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewControllerSpec.swift; sourceTree = "<group>"; };
 		5F10A43A2068318C00DB051E /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		5F10A43C2068F56600DB051E /* JSONs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONs.swift; sourceTree = "<group>"; };
+		5F180E512070A8380090B21D /* RouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
 		5F3645652062DEA400E69793 /* YATodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YATodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F3645682062DEA400E69793 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F36456F2062DEA400E69793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +72,8 @@
 		5F3645742062DEA400E69793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F3645792062DEA500E69793 /* YATodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YATodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F36457F2062DEA500E69793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F3A09A12076325000C50906 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
+		5F3A09A42076CE2200C50906 /* TodoItemViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemViewControllerSpec.swift; sourceTree = "<group>"; };
 		5F4D1B0520690FDA00375DE3 /* Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 		5F7D3B0A206379FC00771B33 /* TodoListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCellView.swift; sourceTree = "<group>"; };
 		5F7D3B0C20637A2900771B33 /* TodoListCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListCellView.xib; sourceTree = "<group>"; };
@@ -71,6 +83,7 @@
 		5FAAF26B2062FC2E007EE5D7 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		5FAAF26D20630E85007EE5D7 /* TodoListTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTitleView.xib; sourceTree = "<group>"; };
 		5FAAF26F20630ED2007EE5D7 /* TodoListTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTitleView.swift; sourceTree = "<group>"; };
+		5FAB56532070128F005A3D23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5FB6E8012064566B00406388 /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		5FB6E8042064E8A200406388 /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		5FB6E8072064EAE400406388 /* TodoRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepositorySpec.swift; sourceTree = "<group>"; };
@@ -84,10 +97,15 @@
 		5FBFC4DD206409D400FDC35D /* TodoNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoNetworkService.swift; sourceTree = "<group>"; };
 		5FBFC4E0206409E900FDC35D /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		5FBFC4E220642B5E00FDC35D /* TodoStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStorageService.swift; sourceTree = "<group>"; };
+		5FCCB4B820698C3C00719062 /* TodoItemViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodoItemViewController.storyboard; sourceTree = "<group>"; };
+		5FCCB4BA206994E100719062 /* TodoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemViewController.swift; sourceTree = "<group>"; };
+		5FCCB4BC206A082000719062 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		5FCCB4BE206A099A00719062 /* TodoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemViewModel.swift; sourceTree = "<group>"; };
+		5FF0F9BD2071FF5F00E2B8F3 /* jsonplaceholder-get-success.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "jsonplaceholder-get-success.json"; sourceTree = "<group>"; };
+		67B713F594447AC49B02387D /* Pods_YATodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80EDCE5045FFBEF4A8A7D167 /* Pods_YATodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A144285C97C550F5002981 /* Pods-YATodoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2EFED816F08387CC6A534E3 /* Pods-YATodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YATodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YATodo/Pods-YATodo.release.xcconfig"; sourceTree = "<group>"; };
-		EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE876952764B790681424345 /* Pods_YATodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YATodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5317187FA8D07E22783DFF6 /* Pods_YATodo.framework in Frameworks */,
+				EA2AB34300F5352F64FCF133 /* Pods_YATodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BA6C6F9DB49178129149C6B /* Pods_YATodoTests.framework in Frameworks */,
+				88A62A7B9D80260A796C83BD /* Pods_YATodoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				5FB6E7FE206441D600406388 /* DB */,
-				5FB6E8032064E88D00406388 /* DI */,
 				5FBFC4DF206409E000FDC35D /* Models */,
 				5FBFC4DA206408E400FDC35D /* Services */,
+				5FCCB4B720698C2600719062 /* TodoItem */,
 				5FAAF2682062FBC0007EE5D7 /* TodoList */,
 				5FAAF2652062FA31007EE5D7 /* UI */,
 				5F3645682062DEA400E69793 /* AppDelegate.swift */,
@@ -160,6 +178,7 @@
 		5F36457C2062DEA500E69793 /* YATodoTests */ = {
 			isa = PBXGroup;
 			children = (
+				5F3A09A32076CE0600C50906 /* TodoItem */,
 				5FB6E8062064EACB00406388 /* Services */,
 				5F10A4372067E9E000DB051E /* TodoList */,
 				5F10A43A2068318C00DB051E /* Device.swift */,
@@ -170,10 +189,20 @@
 			path = YATodoTests;
 			sourceTree = "<group>";
 		};
+		5F3A09A32076CE0600C50906 /* TodoItem */ = {
+			isa = PBXGroup;
+			children = (
+				5F3A09A42076CE2200C50906 /* TodoItemViewControllerSpec.swift */,
+			);
+			path = TodoItem;
+			sourceTree = "<group>";
+		};
 		5FAAF2652062FA31007EE5D7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5F3A09A12076325000C50906 /* ActivityIndicatorViewController.swift */,
 				5F7D3B0E20637DBB00771B33 /* Icons.swift */,
+				5FCCB4BC206A082000719062 /* Storyboards.swift */,
 				5FAAF2662062FA3B007EE5D7 /* Theme.swift */,
 			);
 			path = UI;
@@ -202,18 +231,12 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
-		5FB6E8032064E88D00406388 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				5FB6E8042064E8A200406388 /* Injector.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
 		5FB6E8062064EACB00406388 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5F180E512070A8380090B21D /* RouterSpec.swift */,
 				5FB6E8072064EAE400406388 /* TodoRepositorySpec.swift */,
+				5FF0F9BD2071FF5F00E2B8F3 /* jsonplaceholder-get-success.json */,
 				5FB6E80F2064F0A700406388 /* jsonplaceholder-todos-success.json */,
 			);
 			path = Services;
@@ -222,7 +245,9 @@
 		5FBFC4DA206408E400FDC35D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5FB6E8042064E8A200406388 /* Injector.swift */,
 				5FBFC4DB2064090800FDC35D /* JsonPlaceHolderAPI.swift */,
+				5FAB56532070128F005A3D23 /* Router.swift */,
 				5FBFC4DD206409D400FDC35D /* TodoNetworkService.swift */,
 				5FB6E8012064566B00406388 /* TodoRepository.swift */,
 				5FBFC4E220642B5E00FDC35D /* TodoStorageService.swift */,
@@ -236,6 +261,16 @@
 				5FBFC4E0206409E900FDC35D /* Todo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5FCCB4B720698C2600719062 /* TodoItem */ = {
+			isa = PBXGroup;
+			children = (
+				5FCCB4B820698C3C00719062 /* TodoItemViewController.storyboard */,
+				5FCCB4BA206994E100719062 /* TodoItemViewController.swift */,
+				5FCCB4BE206A099A00719062 /* TodoItemViewModel.swift */,
+			);
+			path = TodoItem;
 			sourceTree = "<group>";
 		};
 		A8B7662E082BA3D061A9A5B6 /* Pods */ = {
@@ -252,8 +287,8 @@
 		F3FC747EDA156C28698D4232 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FE876952764B790681424345 /* Pods_YATodo.framework */,
-				EC0A9DBFE564D59D5DFCD225 /* Pods_YATodoTests.framework */,
+				67B713F594447AC49B02387D /* Pods_YATodo.framework */,
+				80EDCE5045FFBEF4A8A7D167 /* Pods_YATodoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,8 +304,7 @@
 				5F3645612062DEA400E69793 /* Sources */,
 				5F3645622062DEA400E69793 /* Frameworks */,
 				5F3645632062DEA400E69793 /* Resources */,
-				CFE0D31619E7F9F1819F68BD /* [CP] Embed Pods Frameworks */,
-				DDB2FC98692A5F68730162EB /* [CP] Copy Pods Resources */,
+				6046BD7A85828F44751AC079 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,8 +323,7 @@
 				5F3645752062DEA500E69793 /* Sources */,
 				5F3645762062DEA500E69793 /* Frameworks */,
 				5F3645772062DEA500E69793 /* Resources */,
-				2F745FB2BA56E728FA5C74E4 /* [CP] Embed Pods Frameworks */,
-				BCEE4DB3E2DEE904C00343F5 /* [CP] Copy Pods Resources */,
+				BBCC927EDF989297C8E1F2FC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FCCB4B920698C3C00719062 /* TodoItemViewController.storyboard in Resources */,
 				5F3645732062DEA400E69793 /* LaunchScreen.storyboard in Resources */,
 				5F7D3B0D20637A2900771B33 /* TodoListCellView.xib in Resources */,
 				5F3645702062DEA400E69793 /* Assets.xcassets in Resources */,
@@ -359,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF0F9BE2071FF5F00E2B8F3 /* jsonplaceholder-get-success.json in Resources */,
 				5FB6E8102064F0A700406388 /* jsonplaceholder-todos-success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,34 +401,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2F745FB2BA56E728FA5C74E4 /* [CP] Embed Pods Frameworks */ = {
+		6046BD7A85828F44751AC079 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialDesignSymbol/MaterialDesignSymbol.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGRDB/RxGRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
-				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/URLPatterns/URLPatterns.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialDesignSymbol.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URLPatterns.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7675E0000B89F60749A84390 /* [CP] Check Pods Manifest.lock */ = {
@@ -432,84 +487,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BCEE4DB3E2DEE904C00343F5 /* [CP] Copy Pods Resources */ = {
+		BBCC927EDF989297C8E1F2FC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CFE0D31619E7F9F1819F68BD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Fakery/Fakery.framework",
-				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
-				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialDesignSymbol/MaterialDesignSymbol.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxGRDB/RxGRDB.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fakery.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialDesignSymbol.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DDB2FC98692A5F68730162EB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodo/Pods-YATodo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YATodoTests/Pods-YATodoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -522,11 +527,15 @@
 				5FAAF26C2062FC2E007EE5D7 /* TodoListViewController.swift in Sources */,
 				5FB6E80A2064ED0400406388 /* DBMigrationService.swift in Sources */,
 				5FAAF2672062FA3B007EE5D7 /* Theme.swift in Sources */,
+				5F3A09A22076325000C50906 /* ActivityIndicatorViewController.swift in Sources */,
+				5FCCB4BF206A099A00719062 /* TodoItemViewModel.swift in Sources */,
 				5FB6E8162066E32200406388 /* TodoListViewModel.swift in Sources */,
 				5F7D3B0F20637DBB00771B33 /* Icons.swift in Sources */,
 				5FB6E8052064E8A200406388 /* Injector.swift in Sources */,
 				5FBFC4E320642B5E00FDC35D /* TodoStorageService.swift in Sources */,
+				5FCCB4BD206A082000719062 /* Storyboards.swift in Sources */,
 				5FB6E8022064566B00406388 /* TodoRepository.swift in Sources */,
+				5FAB56542070128F005A3D23 /* Router.swift in Sources */,
 				5F7D3B0B206379FC00771B33 /* TodoListCellView.swift in Sources */,
 				5FB6E8142066DC6B00406388 /* DBFactory.swift in Sources */,
 				5FB6E80C2064F00700406388 /* main.swift in Sources */,
@@ -534,6 +543,7 @@
 				5FBFC4E1206409E900FDC35D /* Todo.swift in Sources */,
 				5FB6E80E2064F02A00406388 /* TestAppDelegate.swift in Sources */,
 				5FAAF27020630ED2007EE5D7 /* TodoListTitleView.swift in Sources */,
+				5FCCB4BB206994E100719062 /* TodoItemViewController.swift in Sources */,
 				5F3645692062DEA400E69793 /* AppDelegate.swift in Sources */,
 				5FBFC4DC2064090800FDC35D /* JsonPlaceHolderAPI.swift in Sources */,
 			);
@@ -546,8 +556,10 @@
 				5F4D1B0620690FDA00375DE3 /* Sync.swift in Sources */,
 				5F10A4392067E9F800DB051E /* TodoListViewControllerSpec.swift in Sources */,
 				5FB6E8082064EAE400406388 /* TodoRepositorySpec.swift in Sources */,
+				5F180E522070A8380090B21D /* RouterSpec.swift in Sources */,
 				5F10A43B2068318C00DB051E /* Device.swift in Sources */,
 				5F10A43D2068F56600DB051E /* JSONs.swift in Sources */,
+				5F3A09A52076CE2200C50906 /* TodoItemViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

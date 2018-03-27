@@ -28,4 +28,14 @@ struct Icons {
                         value: Theme.secondaryColor)
     return symbol.image(size: size)
   }
+
+  static func save(size: CGSize) -> UIImage {
+    let symbol: MaterialDesignSymbol = MaterialDesignSymbol(
+      text: MaterialDesignIcon.save48px,
+      size: size.width
+    )
+    symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor,
+                        value: Theme.tintTextColor)
+    return symbol.image(size: size)
+  }
 }

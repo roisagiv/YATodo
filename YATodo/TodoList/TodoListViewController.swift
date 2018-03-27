@@ -6,7 +6,6 @@
 //  Copyright © 2018 Roi Sagiv. All rights reserved.
 //
 
-import Fakery
 import MaterialComponents
 import MaterialDesignSymbol
 import RxCocoa
@@ -14,12 +13,18 @@ import RxSwift
 
 class TodoListViewController: MDCCollectionViewController {
   fileprivate let appBar = MDCAppBar()
+  private let fab = MDCFloatingButton()
+
   private var titleView: TodoListTitleView?
   fileprivate var spinnerView: UIView?
 
   private var todos: [TodoModel] = []
   private let disposeBag = DisposeBag()
   fileprivate var viewModel: TodoListViewModel?
+  private var router: Router?
+
+  // ActivityIndicatorViewController
+  var activityIndicator: UIView?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,10 +37,10 @@ class TodoListViewController: MDCCollectionViewController {
     appBar.headerViewController.headerView.trackingScrollView = collectionView
     appBar.addSubviewsToParent()
 
-    let insets = UIApplication.shared.delegate?.window??.safeAreaInsets
-    let height = 104 + (insets?.top ?? 0.0)
     let headerView = appBar.headerViewController.headerView
     headerView.canOverExtend = false
+    headerView.minMaxHeightIncludesSafeArea = false
+    let height: CGFloat = 104
     headerView.maximumHeight = height
     headerView.minimumHeight = height
 
@@ -43,13 +48,23 @@ class TodoListViewController: MDCCollectionViewController {
     titleView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     headerView.insertSubview(titleView!, at: 0)
 
+    // FAB
+    Theme.apply(fab: fab)
+    fab.setTitle(MaterialDesignIcon.add48px, for: .normal)
+    fab.setTitleFont(MaterialDesignFont.fontOfSize(24), for: .normal)
+    fab.sizeToFit()
+    fab.addTarget(self, action: #selector(didTapOnAddNewTodo(_:)), for: .touchUpInside)
+    view.addSubview(fab)
+    fab.translatesAutoresizingMaskIntoConstraints = false
+    fab.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
+    fab.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0).isActive = true
+
     viewModel?.loading.drive(onNext: { [weak self] loading in
       guard let `self` = self else { return }
       if loading {
-        self.spinnerView = self.displaySpinner()
+        self.displayActivityIndicator()
       } else {
-        guard let spinnerView = self.spinnerView else { return }
-        self.removeSpinner(spinnerView)
+        self.hideActivityIndicator()
       }
     }).disposed(by: disposeBag)
 
@@ -64,6 +79,10 @@ class TodoListViewController: MDCCollectionViewController {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: animated)
     titleView?.configure()
+  }
+
+  @objc fileprivate func didTapOnAddNewTodo(_ sender: UIButton) {
+    router?.navigate(to: .new, from: self)
   }
 
 }
@@ -91,6 +110,11 @@ extension TodoListViewController {
     return cell
   }
 
+  override func collectionView(_ collectionView: UICollectionView,
+                               didSelectItemAt indexPath: IndexPath) {
+    let todo = todos[indexPath.row]
+    router?.navigate(to: .edit(id: todo.id), from: self)
+  }
 }
 
 extension TodoListViewController {
@@ -128,36 +152,13 @@ extension TodoListViewController {
 }
 
 extension TodoListViewController {
-  class func new(viewModel: TodoListViewModel) -> UIViewController {
-    let className = String(describing: TodoListViewController.self)
-    let storyboard = UIStoryboard(name: className, bundle: nil)
-    let vc = storyboard.instantiateViewController(withIdentifier: className)
-    let todoListVc = vc as? TodoListViewController
-    todoListVc?.viewModel = viewModel
+  class func new(viewModel: TodoListViewModel, router: Router) -> UIViewController {
+    let vc = Storyboards.viewController(from: self)
+    vc.viewModel = viewModel
+    vc.router = router
     return vc
   }
 }
 
-extension TodoListViewController {
-  func displaySpinner() -> UIView {
-    let spinnerView = UIView(frame: view.bounds)
-    spinnerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    spinnerView.backgroundColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 0.3)
-    let ai = MDCActivityIndicator(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
-    ai.startAnimating()
-    ai.center = spinnerView.center
-    Theme.apply(activityIndicator: ai)
-
-    DispatchQueue.main.async {
-      spinnerView.addSubview(ai)
-      self.view.addSubview(spinnerView)
-    }
-    return spinnerView
-  }
-
-  func removeSpinner(_ spinner: UIView) {
-    DispatchQueue.main.async {
-      spinner.removeFromSuperview()
-    }
-  }
+extension TodoListViewController: ActivityIndicatorViewController {
 }

@@ -20,5 +20,6 @@ class TodoListCellView: MDCCollectionViewTextCell, Reusable {
 
     textLabel?.text = todo.title
     textLabel?.textColor = Theme.tintSecondaryTextColor
+    textLabel?.numberOfLines = 2
   }
 }

@@ -6,14 +6,15 @@
 //  Copyright © 2018 Roi Sagiv. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import MaterialComponents
 
 class TestAppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_: UIApplication,
                    didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
+    MDCIcons.ic_arrow_backUseNewStyle(true)
     window = UIWindow(frame: UIScreen.main.bounds)
 
     window?.rootViewController = UIViewController()

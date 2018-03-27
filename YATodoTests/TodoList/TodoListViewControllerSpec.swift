@@ -16,11 +16,13 @@ import RxSwift
 
 class TodoListViewControllerSpec: QuickSpec {
   override func spec() {
+    let router = TestableRouter()
+
     describe("viewDidLoad") {
 
       it("displays the loading state") {
         let viewModel = TestableViewModel()
-        let vc = TodoListViewController.new(viewModel: viewModel)
+        let vc = TodoListViewController.new(viewModel: viewModel, router: router)
         TestAppDelegate.displayAsRoot(viewController: vc)
         viewModel.loadingSubject.onNext(true)
         Sync.tick()
@@ -31,7 +33,7 @@ class TodoListViewControllerSpec: QuickSpec {
       it("displays the todo list") {
         let data = JSONs.codableFromFile("jsonplaceholder-todos-success", type: [TodoModel].self)
         let viewModel = TestableViewModel()
-        let vc = TodoListViewController.new(viewModel: viewModel)
+        let vc = TodoListViewController.new(viewModel: viewModel, router: router)
         TestAppDelegate.displayAsRoot(viewController: vc)
         viewModel.todoSubject.onNext(data)
         Sync.tick()
@@ -52,7 +54,7 @@ class TodoListViewControllerSpec: QuickSpec {
 
         Injector.configure(application: UIApplication.shared)
         let viewModel = Injector.todoListViewModel()
-        let vc = TodoListViewController.new(viewModel: viewModel)
+        let vc = TodoListViewController.new(viewModel: viewModel, router: router)
         TestAppDelegate.displayAsRoot(viewController: vc)
         expect(httpCalled).toEventually(equal(1))
         Sync.tick()
@@ -74,5 +76,17 @@ class TodoListViewControllerSpec: QuickSpec {
     var loading: Driver<Bool> {
       return loadingSubject.asDriver(onErrorJustReturn: false)
     }
+  }
+
+  class TestableRouter: Router {
+
+    func navigate(to route: Route, from window: UIWindow) {
+      // nothing!
+    }
+
+    func navigate(to route: Route, from viewController: UIViewController) {
+      // nothing!
+    }
+
   }
 }

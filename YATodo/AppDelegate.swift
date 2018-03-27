@@ -7,22 +7,22 @@
 //
 
 import GRDB
+import MaterialComponents
 import Swinject
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var container: Container!
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    MDCIcons.ic_arrow_backUseNewStyle(true)
     Injector.configure(application: application)
 
     let window = UIWindow(frame: UIScreen.main.bounds)
-    let vc = TodoListViewController.new(viewModel: Injector.todoListViewModel())
-    let nc = UINavigationController(rootViewController: vc)
-    window.rootViewController = nc
+    let router = Injector.router()
+    router.navigate(to: .list, from: window)
     window.makeKeyAndVisible()
 
     self.window = window

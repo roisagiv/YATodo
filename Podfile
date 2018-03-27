@@ -7,27 +7,28 @@ pod 'SwiftLint' , '0.25.0'
 target 'YATodo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  # use_modular_headers!
 
   # DI
-  pod 'Swinject', '2.2.0'
+  pod 'Swinject', '2.4.0'
 
   $Rx = '4.1.2'
   pod 'RxSwift', $Rx
   pod 'RxCocoa', $Rx
 
   # Network
-  $Moya = '11.0.1'
+  $Moya = '11.0.2'
   pod 'Moya', $Moya
   pod 'Moya/RxSwift', $Moya
   
   # DB
-  pod 'RxGRDB', '0.9.0'
-  
+  pod 'RxGRDB', '0.10.0'
+
   # Custom Views
   pod 'Reusable', '4.0.2'
   
   # UI
-  $MaterialComponents = '48.0.0'
+  $MaterialComponents = '52.0.0'
   pod 'MaterialComponents/AppBar', $MaterialComponents
   pod 'MaterialComponents/AppBar+Extensions/ColorThemer', $MaterialComponents
   pod 'MaterialComponents/Buttons', $MaterialComponents
@@ -45,16 +46,16 @@ target 'YATodo' do
   # Icons
   pod 'MaterialDesignSymbol', '2.2.2'
   
-  # Fakes
-  pod 'Fakery', '3.3.0'
-  
+  # URLs
+  pod 'URLPatterns', '0.2.0'
+
   target 'YATodoTests' do
     inherit! :search_paths
     
     pod 'RxBlocking', $Rx
     pod 'Quick', '1.2.0'
     pod 'Nimble', '7.0.3'
-    pod 'Nimble-Snapshots', '6.4.1'
+    pod 'Nimble-Snapshots', '6.5.0'
     pod 'OHHTTPStubs/Swift', '6.1.0'
   end
 

@@ -50,6 +50,15 @@ struct Theme {
     MDCActivityIndicatorColorThemer.apply(Theme.colorScheme, to: activityIndicator)
   }
 
+  static func apply(fab: MDCFloatingButton) {
+    MDCButtonColorThemer.apply(Theme.colorScheme, to: fab)
+    fab.tintColor = Theme.primaryTextColor
+  }
+
+  static func apply(textController: MDCTextInputController) {
+    MDCTextFieldColorThemer.apply(Theme.colorScheme, to: textController)
+  }
+
   static func applyGradient(view: UIView) {
     let gradientLayer: CAGradientLayer = [Theme.primaryLightColor, Theme.primaryColor].gradient { gradient in
       gradient.locations = [0.0, 5.0]

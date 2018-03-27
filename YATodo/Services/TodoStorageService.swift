@@ -12,7 +12,12 @@ import RxSwift
 
 protocol TodoStorageService {
   func all() -> Observable<[TodoModel]>
+
+  // swiftlint:disable:next identifier_name
+  func get(id: Int) -> Observable<TodoModel?>
+
   func save(todos: [TodoModel]) -> Single<[TodoModel]>
+  func save(todo: TodoModel) -> Single<TodoModel>
 }
 
 struct GRDBTodoStorageService: TodoStorageService {
@@ -25,6 +30,13 @@ struct GRDBTodoStorageService: TodoStorageService {
   func all() -> Observable<[TodoModel]> {
     return TodoModel.all().rx
       .fetchAll(in: self.database)
+      .observeOn(SerialDispatchQueueScheduler(qos: .userInitiated))
+  }
+
+  // swiftlint:disable:next identifier_name
+  func get(id: Int) -> Observable<TodoModel?> {
+    return TodoModel.filter(key: id).rx
+      .fetchOne(in: self.database)
       .observeOn(SerialDispatchQueueScheduler(qos: .userInitiated))
   }
 
@@ -41,6 +53,22 @@ struct GRDBTodoStorageService: TodoStorageService {
           }
         }
         return .just(todos)
+      } catch let error {
+        return .error(error)
+      }
+    }
+  }
+
+  func save(todo: TodoModel) -> Single<TodoModel> {
+    return Single<TodoModel>.deferred {
+      do {
+        try self.database.write { writer in
+          try writer.inTransaction {
+            try todo.save(writer)
+            return .commit
+          }
+        }
+        return .just(todo)
       } catch let error {
         return .error(error)
       }

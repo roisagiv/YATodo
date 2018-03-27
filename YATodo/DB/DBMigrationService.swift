@@ -6,33 +6,11 @@
 //  Copyright © 2018 Roi Sagiv. All rights reserved.
 //
 
-import Fakery
 import GRDB
 
 struct DBMigrationService {
   static func migrate(database: DatabaseWriter) throws {
     try migrator.migrate(database)
-  }
-
-  static func fill(database: DatabaseWriter) throws {
-    try fixtures.migrate(database)
-  }
-
-  private static var fixtures: DatabaseMigrator {
-    var migrator = DatabaseMigrator()
-    migrator.registerMigration("fixtures") { database in
-      let fake = Faker()
-      for _ in 0..<40 {
-        let todo = TodoModel(
-          id: fake.number.increasingUniqueId(),
-          title: fake.lorem.sentence(),
-          completed: fake.number.randomBool()
-        )
-        try todo.insert(database)
-      }
-
-    }
-    return migrator
   }
 
   private static var migrator: DatabaseMigrator {
