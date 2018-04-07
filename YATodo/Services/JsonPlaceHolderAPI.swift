@@ -13,6 +13,7 @@ enum JsonPlaceHolderAPI {
   case get(id: Int)
   case create(title: String, completed: Bool)
   case update(id: Int, title: String, completed: Bool)
+  case delete(id: Int)
 }
 
 extension JsonPlaceHolderAPI: TargetType {
@@ -31,10 +32,15 @@ extension JsonPlaceHolderAPI: TargetType {
     switch self {
     case .all, .get:
       return .get
+
     case .create:
       return .post
+
     case .update:
       return .put
+
+    case .delete:
+      return .delete
     }
   }
 
@@ -42,10 +48,8 @@ extension JsonPlaceHolderAPI: TargetType {
     switch self {
     case .all, .create:
       return "/todos"
-    case .get(let id):
+    case .get(let id), .delete(let id), .update(let id, _, _):
       return "/todos/\(id)"
-    case .update(let id, _, _):
-      return "todos/\(id)"
     }
   }
 
@@ -55,7 +59,7 @@ extension JsonPlaceHolderAPI: TargetType {
 
   var task: Task {
     switch self {
-    case .all, .get:
+    case .all, .get, .delete:
       return Task.requestPlain
 
     case .update(let id, let title, let completed):

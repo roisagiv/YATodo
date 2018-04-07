@@ -16,6 +16,9 @@ protocol TodoStorageService {
   // swiftlint:disable:next identifier_name
   func get(id: Int) -> Observable<TodoModel?>
 
+  // swiftlint:disable:next identifier_name
+  func delete(id: Int) -> Single<Void>
+
   func save(todos: [TodoModel]) -> Single<[TodoModel]>
   func save(todo: TodoModel) -> Single<TodoModel>
 }
@@ -69,6 +72,26 @@ struct GRDBTodoStorageService: TodoStorageService {
           }
         }
         return .just(todo)
+      } catch let error {
+        return .error(error)
+      }
+    }
+  }
+
+  // swiftlint:disable:next identifier_name
+  func delete(id: Int) -> Single<Void> {
+    return Single<Void>.deferred {
+      do {
+        try self.database.write { writer in
+          try writer.inTransaction {
+            if try TodoModel.deleteOne(writer, key: id) {
+              return .commit
+            } else {
+              return .rollback
+            }
+          }
+        }
+        return .just(())
       } catch let error {
         return .error(error)
       }

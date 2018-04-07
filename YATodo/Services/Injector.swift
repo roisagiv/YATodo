@@ -28,7 +28,7 @@ class Injector {
   private static var container: Container!
 
   class func configure(application: UIApplication) {
-    let log = false
+    let log = true
     container = Container { container in
       container.register(TodoNetworkService.self) { _ in
         MoyaTodoNetworkService(log: log)

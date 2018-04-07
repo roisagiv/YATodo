@@ -12,6 +12,8 @@ import RxSwift
 protocol TodoListViewModel {
   var todos: Driver<[TodoModel]> { get }
   var loading: Driver<Bool> { get }
+  func toggle(todo: TodoModel) -> Driver<Void>
+  func delete(todo: TodoModel) -> Driver<Void>
 }
 
 class DefaultTodoListViewModel: TodoListViewModel {
@@ -47,4 +49,13 @@ class DefaultTodoListViewModel: TodoListViewModel {
         }
       )
   }
+
+  func toggle(todo: TodoModel) -> Driver<Void> {
+    return repository.toggle(todo: todo).asDriver(onErrorJustReturn: ())
+  }
+
+  func delete(todo: TodoModel) -> Driver<Void> {
+    return repository.delete(id: todo.id).asDriver(onErrorJustReturn: ())
+  }
+
 }

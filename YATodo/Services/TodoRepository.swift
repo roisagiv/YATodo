@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import Moya
 
 class TodoRepository {
   private let storage: TodoStorageService
@@ -70,6 +71,31 @@ class TodoRepository {
         }
         return self.storage.save(todo: element)
       }
+  }
+
+  func toggle(todo: TodoModel) -> Single<Void> {
+    return self.storage
+      .save(todo: TodoModel(id: todo.id, title: todo.title, completed: !todo.completed))
+      .flatMap { [weak self] (todo) -> Single<TodoModel> in
+        guard let `self` = self else {
+          return Single<TodoModel>.error(Error.weak)
+        }
+        return self.network.update(todo: todo)
+      }
+      .flatMap { _ in Single<Void>.just(()) }
+  }
+
+  // swiftlint:disable:next identifier_name
+  func delete(id: Int) -> Single<Void> {
+    return self.storage
+      .delete(id: id)
+      .flatMap { [weak self] (_) -> Single<Moya.Response> in
+        guard let `self` = self else {
+          return Single<Moya.Response>.error(Error.weak)
+        }
+        return self.network.delete(id: id)
+      }
+      .flatMap { _ in Single<Void>.just(()) }
   }
 
   enum Error: Swift.Error {

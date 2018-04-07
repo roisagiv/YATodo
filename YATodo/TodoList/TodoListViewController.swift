@@ -31,6 +31,7 @@ class TodoListViewController: MDCCollectionViewController {
     collectionView?.backgroundColor = Theme.primaryLightColor
     collectionView?.register(cellType: TodoListCellView.self)
     styler.cellStyle = .default
+    styler.cellLayoutType = .list
 
     // AppBar
     addChildViewController(appBar.headerViewController)
@@ -105,7 +106,12 @@ extension TodoListViewController {
                                cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: TodoListCellView = collectionView.dequeueReusableCell(for: indexPath)
     let todo = todos[indexPath.row]
-    cell.configure(todo: todo)
+    cell.configure(todo: todo) { [weak self] todo in
+      guard let `self` = self else { return }
+      self.viewModel?.toggle(todo: todo)
+        .drive(onCompleted: {})
+        .disposed(by: self.disposeBag)
+    }
 
     return cell
   }
@@ -115,6 +121,25 @@ extension TodoListViewController {
     let todo = todos[indexPath.row]
     router?.navigate(to: .edit(id: todo.id), from: self)
   }
+
+  override func collectionViewAllowsSwipe(toDismissItem collectionView: UICollectionView) -> Bool {
+    return true
+  }
+
+  override func collectionView(_ collectionView: UICollectionView,
+                               canSwipeToDismissItemAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+
+  override func collectionView(_ collectionView: UICollectionView,
+                               didEndSwipeToDismissItemAt indexPath: IndexPath) {
+    let todo = todos[indexPath.row]
+    todos.remove(at: indexPath.row)
+    collectionView.reloadData()
+
+    viewModel?.delete(todo: todo).drive().disposed(by: disposeBag)
+  }
+
 }
 
 extension TodoListViewController {

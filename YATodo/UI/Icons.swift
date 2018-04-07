@@ -11,7 +11,7 @@ import MaterialDesignSymbol
 struct Icons {
   static func checkBoxOutline(size: CGSize) -> UIImage {
     let symbol: MaterialDesignSymbol = MaterialDesignSymbol(
-      text: MaterialDesignIcon.checkBoxOutlineBlank24px,
+      text: MaterialDesignIcon.checkBoxOutlineBlank48px,
       size: size.width
     )
     symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor,
@@ -21,7 +21,7 @@ struct Icons {
 
   static func checkBox(size: CGSize) -> UIImage {
     let symbol: MaterialDesignSymbol = MaterialDesignSymbol(
-      text: MaterialDesignIcon.checkBox24px,
+      text: MaterialDesignIcon.checkBox48px,
       size: size.width
     )
     symbol.addAttribute(attributeName: NSAttributedStringKey.foregroundColor,

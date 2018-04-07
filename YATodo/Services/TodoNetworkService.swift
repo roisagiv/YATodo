@@ -18,6 +18,9 @@ protocol TodoNetworkService {
   func update(todo: TodoModel) -> Single<TodoModel>
 
   func create(title: String, completed: Bool) -> Single<TodoModel>
+
+  // swiftlint:disable:next identifier_name
+  func delete(id: Int) -> Single<Response>
 }
 
 struct MoyaTodoNetworkService: TodoNetworkService {
@@ -59,5 +62,12 @@ struct MoyaTodoNetworkService: TodoNetworkService {
       .request(.create(title: title, completed: completed))
       .filterSuccessfulStatusAndRedirectCodes()
       .map(TodoModel.self)
+  }
+
+  // swiftlint:disable:next identifier_name
+  func delete(id: Int) -> Single<Response> {
+    return provider.rx
+      .request(.delete(id: id))
+      .filterSuccessfulStatusAndRedirectCodes()
   }
 }

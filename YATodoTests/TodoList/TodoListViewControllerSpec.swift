@@ -65,6 +65,13 @@ class TodoListViewControllerSpec: QuickSpec {
   }
 
   class TestableViewModel: TodoListViewModel {
+    func toggle(todo: TodoModel) -> Driver<Void> {
+      return Driver<Void>.empty()
+    }
+    
+    func delete(todo: TodoModel) -> Driver<Void> {
+      return Driver<Void>.empty()
+    }
 
     let todoSubject = PublishSubject<[TodoModel]>()
     let loadingSubject = PublishSubject<Bool>()

@@ -213,6 +213,60 @@ class TodoRepositorySpec: QuickSpec {
           expect(httpCalled).to(equal(1))
         }
       }
+
+      describe("toggle") {
+
+        it("toggles the completed field in db") {
+          let todo = TodoModel(id: 1, title: "title", completed: false)
+          var httpCalled = 0
+          OHHTTPStubs.stubRequests(passingTest: { $0.url?.path == "/todos/\(todo.id)" }) { request in
+            expect(request.httpMethod).to(equal("PUT"))
+            httpCalled += 1
+            return OHHTTPStubsResponse(data: JSONs.toData(todo), statusCode: 200, headers: nil)
+          }
+          let db = DBFactory.inMemory(log: false)
+          try! DBMigrationService.migrate(database: db)
+
+          let storage = GRDBTodoStorageService(database: db)
+          let network = MoyaTodoNetworkService(log: false)
+          let repo = TodoRepository(storage: storage, network: network)
+
+          expect { try repo.save(todo: todo).toBlocking().first()?.completed }.to(equal(todo.completed))
+
+          expect { try repo.get(id: todo.id).toBlocking().first()?.completed }.to(equal(todo.completed))
+          expect { try repo.toggle(todo: todo).toBlocking().first() }.notTo(throwError())
+          expect { try repo.get(id: todo.id).toBlocking().first()?.completed }.to(equal(!todo.completed))
+          expect(httpCalled).to(equal(2))
+        }
+      }
+
+      describe("delete") {
+
+        it("sends DELETE request") {
+          let todo = TodoModel(id: 1, title: "title", completed: true)
+          var httpCalled = 0
+          OHHTTPStubs.stubRequests(passingTest: { $0.url?.path == "/todos/\(todo.id)" }) { request in
+            expect(request.httpMethod).to(equal("DELETE"))
+            httpCalled += 1
+            return OHHTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
+          }
+
+          let db = DBFactory.inMemory(log: false)
+          try! DBMigrationService.migrate(database: db)
+          db.inDatabase { database in
+            try! todo.insert(database)
+          }
+
+          let storage = GRDBTodoStorageService(database: db)
+          let network = MoyaTodoNetworkService(log: false)
+          let repo = TodoRepository(storage: storage, network: network)
+
+          expect { try storage.all().toBlocking().first()?.count }.to(equal(1))
+          expect { try repo.delete(id: todo.id).toBlocking().first() }.notTo(throwError())
+          expect(httpCalled).to(equal(1))
+          expect { try storage.all().toBlocking().first()?.count }.to(equal(0))
+        }
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
 platform :ios, '10.0'
 
 # Lints
-pod 'SwiftLint' , '0.25.0'
+pod 'SwiftLint' , '0.25.1'
 
 target 'YATodo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -28,7 +28,7 @@ target 'YATodo' do
   pod 'Reusable', '4.0.2'
   
   # UI
-  $MaterialComponents = '52.0.0'
+  $MaterialComponents = '53.0.0'
   pod 'MaterialComponents/AppBar', $MaterialComponents
   pod 'MaterialComponents/AppBar+Extensions/ColorThemer', $MaterialComponents
   pod 'MaterialComponents/Buttons', $MaterialComponents

@@ -178,8 +178,8 @@
 		5F36457C2062DEA500E69793 /* YATodoTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F3A09A32076CE0600C50906 /* TodoItem */,
 				5FB6E8062064EACB00406388 /* Services */,
+				5F3A09A32076CE0600C50906 /* TodoItem */,
 				5F10A4372067E9E000DB051E /* TodoList */,
 				5F10A43A2068318C00DB051E /* Device.swift */,
 				5F36457F2062DEA500E69793 /* Info.plist */,
