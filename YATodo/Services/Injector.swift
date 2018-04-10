@@ -25,19 +25,24 @@ class Injector {
     return container.resolve(Router.self)!
   }
 
+  class func dates() -> Dates {
+    return container.resolve(Dates.self)!
+  }
+
   private static var container: Container!
 
   class func configure(application: UIApplication) {
-    let log = true
+    let log = false
+
     container = Container { container in
       container.register(TodoNetworkService.self) { _ in
         MoyaTodoNetworkService(log: log)
       }
 
       container.register(DatabaseWriter.self) { _ in
-        let writer = DBFactory.inMemory(log: log)
+        let writer = Databases.inMemory(log: log)
         do {
-          try DBMigrationService.migrate(database: writer)
+          try Databases.migrate(database: writer)
         } catch {}
         return writer
       }
@@ -62,9 +67,9 @@ class Injector {
         DefaultTodoItemViewModel(repository: resolver.resolve(TodoRepository.self)!, id: id)
       }
 
-      container.register(Router.self) { _ in
-        DefaultRouter()
-      }
+      container.register(Router.self) { _ in DefaultRouter() }
+
+      container.register(Dates.self) { _ in DefaultDates() }
     }
   }
 }

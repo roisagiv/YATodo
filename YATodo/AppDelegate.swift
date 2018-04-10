@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    MDCIcons.ic_arrow_backUseNewStyle(true)
+    Theme.applyGlobaly()
     Injector.configure(application: application)
 
     let window = UIWindow(frame: UIScreen.main.bounds)

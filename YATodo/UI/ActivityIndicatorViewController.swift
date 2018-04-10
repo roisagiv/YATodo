@@ -22,7 +22,6 @@ extension ActivityIndicatorViewController where Self: UIViewController {
     let ai = MDCActivityIndicator(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
     ai.startAnimating()
     ai.center = spinnerView.center
-    Theme.apply(activityIndicator: ai)
 
     DispatchQueue.main.async {
       spinnerView.addSubview(ai)

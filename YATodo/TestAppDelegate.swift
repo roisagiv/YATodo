@@ -14,7 +14,7 @@ class TestAppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_: UIApplication,
                    didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
-    MDCIcons.ic_arrow_backUseNewStyle(true)
+    Theme.applyGlobaly()
     window = UIWindow(frame: UIScreen.main.bounds)
 
     window?.rootViewController = UIViewController()

@@ -16,13 +16,19 @@ import RxSwift
 
 class TodoListViewControllerSpec: QuickSpec {
   override func spec() {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy/MM/dd HH:mm"
+    let testableToday = formatter.date(from: "2017/12/10 22:31")!
     let router = TestableRouter()
+    let dates = TestableDates(date: testableToday)
 
     describe("viewDidLoad") {
 
       it("displays the loading state") {
         let viewModel = TestableViewModel()
-        let vc = TodoListViewController.new(viewModel: viewModel, router: router)
+        let vc = TodoListViewController.new(
+          viewModel: viewModel, router: router, dates: dates
+        )
         TestAppDelegate.displayAsRoot(viewController: vc)
         viewModel.loadingSubject.onNext(true)
         Sync.tick()
@@ -33,7 +39,9 @@ class TodoListViewControllerSpec: QuickSpec {
       it("displays the todo list") {
         let data = JSONs.codableFromFile("jsonplaceholder-todos-success", type: [TodoModel].self)
         let viewModel = TestableViewModel()
-        let vc = TodoListViewController.new(viewModel: viewModel, router: router)
+        let vc = TodoListViewController.new(
+          viewModel: viewModel, router: router, dates: dates
+        )
         TestAppDelegate.displayAsRoot(viewController: vc)
         viewModel.todoSubject.onNext(data)
         Sync.tick()
@@ -54,7 +62,9 @@ class TodoListViewControllerSpec: QuickSpec {
 
         Injector.configure(application: UIApplication.shared)
         let viewModel = Injector.todoListViewModel()
-        let vc = TodoListViewController.new(viewModel: viewModel, router: router)
+        let vc = TodoListViewController.new(
+          viewModel: viewModel, router: router, dates: dates
+        )
         TestAppDelegate.displayAsRoot(viewController: vc)
         expect(httpCalled).toEventually(equal(1))
         Sync.tick()
@@ -68,7 +78,7 @@ class TodoListViewControllerSpec: QuickSpec {
     func toggle(todo: TodoModel) -> Driver<Void> {
       return Driver<Void>.empty()
     }
-    
+
     func delete(todo: TodoModel) -> Driver<Void> {
       return Driver<Void>.empty()
     }
@@ -95,5 +105,13 @@ class TodoListViewControllerSpec: QuickSpec {
       // nothing!
     }
 
+  }
+
+  struct TestableDates: Dates {
+    let date: Date
+
+    func today() -> Date {
+      return date
+    }
   }
 }

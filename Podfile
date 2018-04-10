@@ -28,7 +28,7 @@ target 'YATodo' do
   pod 'Reusable', '4.0.2'
   
   # UI
-  $MaterialComponents = '53.0.0'
+  $MaterialComponents = '54.2.0'
   pod 'MaterialComponents/AppBar', $MaterialComponents
   pod 'MaterialComponents/AppBar+Extensions/ColorThemer', $MaterialComponents
   pod 'MaterialComponents/Buttons', $MaterialComponents
@@ -54,8 +54,8 @@ target 'YATodo' do
     
     pod 'RxBlocking', $Rx
     pod 'Quick', '1.2.0'
-    pod 'Nimble', '7.0.3'
-    pod 'Nimble-Snapshots', '6.5.0'
+    pod 'Nimble', '7.1.0'
+    pod 'Nimble-Snapshots', '6.6.0'
     pod 'OHHTTPStubs/Swift', '6.1.0'
   end
 

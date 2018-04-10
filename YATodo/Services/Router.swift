@@ -32,7 +32,10 @@ enum Route: Equatable {
     case .list:
       let viewModel = Injector.todoListViewModel()
       let router = Injector.router()
-      return TodoListViewController.new(viewModel: viewModel, router: router)
+      let dates = Injector.dates()
+      return TodoListViewController.new(
+        viewModel: viewModel, router: router, dates: dates
+      )
 
     case .new:
       let viewModel = Injector.todoItemViewModel(id: nil)

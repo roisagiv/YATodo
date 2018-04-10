@@ -22,6 +22,7 @@ class TodoListViewController: MDCCollectionViewController {
   private let disposeBag = DisposeBag()
   fileprivate var viewModel: TodoListViewModel?
   private var router: Router?
+  private var dates: Dates?
 
   // ActivityIndicatorViewController
   var activityIndicator: UIView?
@@ -50,7 +51,6 @@ class TodoListViewController: MDCCollectionViewController {
     headerView.insertSubview(titleView!, at: 0)
 
     // FAB
-    Theme.apply(fab: fab)
     fab.setTitle(MaterialDesignIcon.add48px, for: .normal)
     fab.setTitleFont(MaterialDesignFont.fontOfSize(24), for: .normal)
     fab.sizeToFit()
@@ -71,6 +71,8 @@ class TodoListViewController: MDCCollectionViewController {
 
     viewModel?.todos.drive(onNext: { [weak self] todos in
       self?.todos = todos
+      self?.titleView?.configure(tasksCount: todos.count,
+                                 date: self?.dates?.today() ?? Date())
       self?.collectionView?.reloadData()
     }).disposed(by: disposeBag)
 
@@ -79,7 +81,7 @@ class TodoListViewController: MDCCollectionViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: animated)
-    titleView?.configure()
+    titleView?.configure(tasksCount: todos.count, date: dates?.today() ?? Date())
   }
 
   @objc fileprivate func didTapOnAddNewTodo(_ sender: UIButton) {
@@ -177,10 +179,13 @@ extension TodoListViewController {
 }
 
 extension TodoListViewController {
-  class func new(viewModel: TodoListViewModel, router: Router) -> UIViewController {
+  class func new(viewModel: TodoListViewModel,
+                 router: Router,
+                 dates: Dates) -> UIViewController {
     let vc = Storyboards.viewController(from: self)
     vc.viewModel = viewModel
     vc.router = router
+    vc.dates = dates
     return vc
   }
 }

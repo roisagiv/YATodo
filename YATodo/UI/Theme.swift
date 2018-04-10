@@ -29,6 +29,13 @@ struct Theme {
                                                        secondaryLightColor: Theme.secondaryLightColor,
                                                        secondaryDarkColor: Theme.secondaryDarkColor)
 
+  static func applyGlobaly() {
+    MDCIcons.ic_arrow_backUseNewStyle(true)
+    apply(activityIndicator: MDCActivityIndicator.appearance())
+    apply(fab: MDCFloatingButton.appearance())
+    MDCFlexibleHeaderColorThemer.apply(colorScheme, to: MDCFlexibleHeaderView.appearance())
+  }
+
   static func apply(appBar: MDCAppBar) {
     appBar.headerViewController.headerView.backgroundColor = Theme.primaryLightColor
     let navigationBar = appBar.navigationBar

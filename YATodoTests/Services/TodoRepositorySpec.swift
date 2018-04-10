@@ -40,7 +40,7 @@ class TodoRepositorySpec: QuickSpec {
           }
 
           let db = DatabaseQueue()
-          try! DBMigrationService.migrate(database: db)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -64,7 +64,7 @@ class TodoRepositorySpec: QuickSpec {
           }
 
           let db = DatabaseQueue()
-          try! DBMigrationService.migrate(database: db)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -87,8 +87,8 @@ class TodoRepositorySpec: QuickSpec {
             return OHHTTPStubsResponse(fileAtPath: path, statusCode: 200, headers: nil)
           }
 
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -114,8 +114,8 @@ class TodoRepositorySpec: QuickSpec {
             return OHHTTPStubsResponse(error: notConnectedError)
           }
 
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -138,8 +138,8 @@ class TodoRepositorySpec: QuickSpec {
             return OHHTTPStubsResponse(fileAtPath: path, statusCode: 200, headers: nil)
           }
 
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -165,8 +165,8 @@ class TodoRepositorySpec: QuickSpec {
             return OHHTTPStubsResponse(data: JSONs.toData(todo), statusCode: 200, headers: nil)
           }
 
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -195,8 +195,8 @@ class TodoRepositorySpec: QuickSpec {
             return OHHTTPStubsResponse(data: JSONs.toData(payload), statusCode: 200, headers: nil)
           }
 
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
 
           let network = MoyaTodoNetworkService(log: false)
           let storage = GRDBTodoStorageService(database: db)
@@ -224,8 +224,8 @@ class TodoRepositorySpec: QuickSpec {
             httpCalled += 1
             return OHHTTPStubsResponse(data: JSONs.toData(todo), statusCode: 200, headers: nil)
           }
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
 
           let storage = GRDBTodoStorageService(database: db)
           let network = MoyaTodoNetworkService(log: false)
@@ -251,8 +251,8 @@ class TodoRepositorySpec: QuickSpec {
             return OHHTTPStubsResponse(data: Data(), statusCode: 200, headers: nil)
           }
 
-          let db = DBFactory.inMemory(log: false)
-          try! DBMigrationService.migrate(database: db)
+          let db = Databases.inMemory(log: false)
+          try! Databases.migrate(database: db)
           db.inDatabase { database in
             try! todo.insert(database)
           }

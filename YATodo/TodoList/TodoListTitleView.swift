@@ -25,22 +25,37 @@ class TodoListTitleView: UIView, NibOwnerLoadable {
     loadNibContent()
   }
 
-  func configure() {
+  func configure(tasksCount: Int, date: Date) {
     Theme.applyGradient(view: self)
 
-    dateLabel.text = "Thursday, 10th"
+    let dayFormatter = DateFormatter()
+    dayFormatter.dateFormat = "EEEE"
+    let day = ordinalDayFrom(date: date)
+    dateLabel.text = "\(dayFormatter.string(from: date)), \(day)"
     dateLabel.textColor = Theme.tintTextColor
     dateLabel.font = MDCTypography.headlineFont()
     dateLabel.alpha = MDCTypography.headlineFontOpacity()
 
-    monthLabel.text = "December"
+    let monthFormatter = DateFormatter()
+    monthFormatter.dateFormat = "MMMM"
+    monthLabel.text = monthFormatter.string(from: date)
     monthLabel.textColor = Theme.tintSecondaryTextColor
     monthLabel.font = MDCTypography.body2Font()
     monthLabel.alpha = MDCTypography.body2FontOpacity()
 
-    todoCountLabel.text = "12 Tasks"
+    todoCountLabel.text = "\(tasksCount) Tasks"
     todoCountLabel.textColor = Theme.tintSecondaryTextColor
     todoCountLabel.font = MDCTypography.body2Font()
     todoCountLabel.alpha = MDCTypography.body2FontOpacity()
+  }
+
+  private func ordinalDayFrom(date: Date) -> String {
+    let calendar = Calendar.current
+    let dateComponents = calendar.component(.day, from: date)
+    let numberFormatter = NumberFormatter()
+
+    numberFormatter.numberStyle = .ordinal
+
+    return numberFormatter.string(from: dateComponents as NSNumber) ?? ""
   }
 }

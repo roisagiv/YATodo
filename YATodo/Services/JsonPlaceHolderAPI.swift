@@ -66,8 +66,13 @@ extension JsonPlaceHolderAPI: TargetType {
       return Task.requestJSONEncodable(TodoModel(id: id, title: title, completed: completed))
 
     case .create(let title, let completed):
-      return Task.requestParameters(parameters: ["title": title, "completed": completed],
-                                    encoding: JSONEncoding.default)
+      return Task.requestParameters(
+        parameters: [
+          TodoModel.TodoKeys.title.stringValue: title,
+          TodoModel.TodoKeys.completed.stringValue: completed
+        ],
+        encoding: JSONEncoding.default
+      )
     }
   }
 
