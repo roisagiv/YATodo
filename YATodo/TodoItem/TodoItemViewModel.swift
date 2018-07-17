@@ -19,7 +19,6 @@ class DefaultTodoItemViewModel: TodoItemViewModel {
   private let repository: TodoRepository
   private let todoId: Int?
 
-  // swiftlint:disable:next identifier_name
   init(repository: TodoRepository, id: Int?) {
     self.repository = repository
     self.todoId = id

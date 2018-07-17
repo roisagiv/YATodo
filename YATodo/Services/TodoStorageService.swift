@@ -13,10 +13,8 @@ import RxSwift
 protocol TodoStorageService {
   func all() -> Observable<[TodoModel]>
 
-  // swiftlint:disable:next identifier_name
   func get(id: Int) -> Observable<TodoModel?>
 
-  // swiftlint:disable:next identifier_name
   func delete(id: Int) -> Single<Void>
 
   func save(todos: [TodoModel]) -> Single<[TodoModel]>
@@ -36,7 +34,6 @@ struct GRDBTodoStorageService: TodoStorageService {
       .observeOn(SerialDispatchQueueScheduler(qos: .userInitiated))
   }
 
-  // swiftlint:disable:next identifier_name
   func get(id: Int) -> Observable<TodoModel?> {
     return TodoModel.filter(key: id).rx
       .fetchOne(in: self.database)
@@ -47,13 +44,9 @@ struct GRDBTodoStorageService: TodoStorageService {
     return Single<[TodoModel]>.deferred {
       do {
         try self.database.write { writer in
-          try writer.inTransaction {
             for todo in todos {
               try todo.insert(writer)
             }
-
-            return .commit
-          }
         }
         return .just(todos)
       } catch let error {
@@ -66,10 +59,7 @@ struct GRDBTodoStorageService: TodoStorageService {
     return Single<TodoModel>.deferred {
       do {
         try self.database.write { writer in
-          try writer.inTransaction {
             try todo.save(writer)
-            return .commit
-          }
         }
         return .just(todo)
       } catch let error {
@@ -78,19 +68,12 @@ struct GRDBTodoStorageService: TodoStorageService {
     }
   }
 
-  // swiftlint:disable:next identifier_name
   func delete(id: Int) -> Single<Void> {
     return Single<Void>.deferred {
       do {
-        try self.database.write { writer in
-          try writer.inTransaction {
-            if try TodoModel.deleteOne(writer, key: id) {
-              return .commit
-            } else {
-              return .rollback
-            }
-          }
-        }
+        _ = try self.database.write { writer in
+            return try TodoModel.deleteOne(writer, key: id)
+       }
         return .just(())
       } catch let error {
         return .error(error)

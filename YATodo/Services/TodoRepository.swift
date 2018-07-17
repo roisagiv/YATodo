@@ -44,7 +44,6 @@ class TodoRepository {
       }
   }
 
-  // swiftlint:disable:next identifier_name
   func get(id: Int) -> Observable<TodoModel> {
     return self.storage
       .get(id: id)
@@ -85,7 +84,6 @@ class TodoRepository {
       .flatMap { _ in Single<Void>.just(()) }
   }
 
-  // swiftlint:disable:next identifier_name
   func delete(id: Int) -> Single<Void> {
     return self.storage
       .delete(id: id)

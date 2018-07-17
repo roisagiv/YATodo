@@ -16,7 +16,6 @@ class Injector {
     return container.resolve(TodoListViewModel.self)!
   }
 
-  // swiftlint:disable:next identifier_name
   class func todoItemViewModel(id: Int?) -> TodoItemViewModel {
     return container.resolve(TodoItemViewModel.self, argument: id)!
   }
@@ -62,7 +61,6 @@ class Injector {
         DefaultTodoListViewModel(repository: resolver.resolve(TodoRepository.self)!)
       }
 
-      // swiftlint:disable:next identifier_name
       container.register(TodoItemViewModel.self) { resolver, id in
         DefaultTodoItemViewModel(repository: resolver.resolve(TodoRepository.self)!, id: id)
       }

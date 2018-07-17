@@ -19,12 +19,12 @@ extension ActivityIndicatorViewController where Self: UIViewController {
     let spinnerView = UIView(frame: view.bounds)
     spinnerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     spinnerView.backgroundColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 0.3)
-    let ai = MDCActivityIndicator(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
-    ai.startAnimating()
-    ai.center = spinnerView.center
+    let indicator = MDCActivityIndicator(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+    indicator.startAnimating()
+    indicator.center = spinnerView.center
 
     DispatchQueue.main.async {
-      spinnerView.addSubview(ai)
+      spinnerView.addSubview(indicator)
       self.view.addSubview(spinnerView)
     }
     self.activityIndicator = spinnerView

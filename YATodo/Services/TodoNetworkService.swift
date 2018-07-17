@@ -12,14 +12,12 @@ import RxSwift
 protocol TodoNetworkService {
   func all() -> Single<[TodoModel]>
 
-  // swiftlint:disable:next identifier_name
   func get(id: Int) -> Single<TodoModel>
 
   func update(todo: TodoModel) -> Single<TodoModel>
 
   func create(title: String, completed: Bool) -> Single<TodoModel>
 
-  // swiftlint:disable:next identifier_name
   func delete(id: Int) -> Single<Response>
 }
 
@@ -42,7 +40,6 @@ struct MoyaTodoNetworkService: TodoNetworkService {
       .map([TodoModel].self)
   }
 
-  // swiftlint:disable:next identifier_name
   func get(id: Int) -> Single<TodoModel> {
     return provider.rx
       .request(.get(id: id))
@@ -64,7 +61,6 @@ struct MoyaTodoNetworkService: TodoNetworkService {
       .map(TodoModel.self)
   }
 
-  // swiftlint:disable:next identifier_name
   func delete(id: Int) -> Single<Response> {
     return provider.rx
       .request(.delete(id: id))
